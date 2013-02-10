@@ -17,7 +17,7 @@ class BaseForm extends Nette\Application\UI\Form {
 	 */
 	public function __construct(Nette\IComponentContainer $parent = NULL, $name = NULL) {
 		parent::__construct($parent, $name);
-		// set translator object
+		// set bootstrap renderer
 		$this->setRenderer(new Kdyby\BootstrapFormRenderer\BootstrapRenderer);
 	}
 
