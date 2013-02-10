@@ -17,6 +17,11 @@ class RouterFactory
 	public function createRouter()
 	{
 		$router = new RouteList();
+		// Changelog Router
+		$changelogRouter = new RouteList('Changelog');
+		$changelogRouter[] = new Route('changelog/<presenter>/<action>[/<id>]', 'Changelog:default');
+		$router[] = $changelogRouter;
+
 		$adminRouter = new RouteList('Admin');
 		$adminRouter[] = new Route('admin/<presenter>/<action>[/<id>]', 'Homepage:default');
 		$router[] = $adminRouter;

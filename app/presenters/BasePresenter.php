@@ -19,6 +19,19 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		$this->models = $models;
 	}
 
+	public function startup()
+	{
+		parent::startup();
+		// check changes in database structure
+		// in production, it must be called manualy
+		if (!$this->context->params['productionMode']
+			&& $this->context->dbChangelog->importNewChangelogData()
+			&& $this->presenter->name != 'Changelog:Changelog'
+		) {
+			$this->redirect(':Changelog:Changelog:');
+		}
+	}
+
 	protected function createTemplate($class = NULL) {
 		$template = parent::createTemplate($class);
 		$template->registerHelperLoader('Helpers::loader');

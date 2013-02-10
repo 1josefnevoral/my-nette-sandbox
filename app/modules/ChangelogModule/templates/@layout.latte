@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{block title|striptags}Changelog{/block}</title>
+
+	{control css 'bootstrap.min.css', 'bootstrap-responsive.css', 'screen.css', 'print.css', 'sandbox.css'}
+	{block head}{/block}
+</head>
+
+<body>
+	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+
+	<div class="well row">
+		{include #content}
+	</div>
+	
+
+	{control js 'jquery.js', 'modernizr.js', 'nette.js', 'nette.ajax.js', 'main.js', 'live-form-validation.js' }
+	{block js}{/block}
+</body>
+</html>

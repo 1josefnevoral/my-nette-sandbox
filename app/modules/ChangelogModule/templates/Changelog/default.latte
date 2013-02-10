@@ -1,0 +1,27 @@
+{block title}Changelog{/block}
+{block content}
+	<h1>Changelog</h1>
+	<a n:href="Changelog:add" class="btn btn-primary">Add query</a>
+	{if $queriesToExecute->count('*') == 0}
+		<p>Nothing to execute</p>
+	{else}
+		<div n:if="$flashes">
+			<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">
+				{$flash->message}
+			</div>
+		</div>
+		<h2>This queries hasn't been executed yet</h2>
+		{foreach $queriesToExecute as $query}
+			<div class="well">
+				# <time>{$query->ins_dt|date:'j. n. Y'}</time> -- <strong>{$query->description}</strong><br/>
+				{$query->query};
+				{if array_key_exists($query->id, $errors)}
+					<div class="alert alert-error">
+						{$errors[$query->id]}
+					</div>
+				{/if}
+			</div>
+		{/foreach}
+		<a n:href="executeQueries!" class="btn btn-danger">Execute</a>
+	{/if}
+{/block}

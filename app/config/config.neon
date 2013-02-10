@@ -10,6 +10,8 @@ parameters:
 		maxHeight: 600
 		basePath: "img/uploads/"
 		tempDir: ""
+	dbChangelog:
+		dir: "changelog"
 php:
 	date.timezone: Europe/Prague
 	# zlib.output_compression: yes
@@ -33,7 +35,9 @@ services:
 
 	imageHelper:
 		class: \ImageHelper(@container)
-
+	dbChangelog:
+		class: ChangelogModule\DbChangelog
+		arguments: [@database, @database::table(changelog), %appDir%/%dbChangelog.dir%/]
 
 factories:
 	cache:

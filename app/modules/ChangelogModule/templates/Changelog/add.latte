@@ -1,0 +1,10 @@
+{block content}
+	<a n:href="Changelog:" class="btn btn-info"><< Back</a>
+	<h1>Add queries</h1>
+	<div n:if="$flashes">
+		<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">
+			{$flash->message}
+		</div>
+	</div>
+	{control addToChangelog}
+{/block}
