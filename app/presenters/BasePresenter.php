@@ -72,14 +72,4 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		return new \WebLoader\Nette\JavaScriptLoader($compiler, $this->template->basePath . '/webtemp');
 	}
 
-	protected function afterRender()
-	{
-		if (Debugger::isEnabled() && Debugger::$bar) {
-			$panels = Nette\Reflection\ClassType::from(Debugger::$bar)
-				->getProperty('panels');
-			$panels->setAccessible(TRUE);
-			$panels = $panels->getValue(Debugger::$bar);
-			$this->payload->netteDumps = $panels['Nette\Diagnostics\DefaultBarPanel-4']->data;
-		}
-	}
 }

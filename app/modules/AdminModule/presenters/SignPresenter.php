@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin;
+namespace AdminModule;
 /**
  * Sign in/out presenters.
  */

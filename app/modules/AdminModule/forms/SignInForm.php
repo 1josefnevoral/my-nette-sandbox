@@ -1,5 +1,5 @@
 <?php
-namespace Admin\Forms;
+namespace AdminModule\Forms;
 
 use Nette\Application\UI;
 

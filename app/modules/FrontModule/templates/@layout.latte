@@ -7,20 +7,18 @@
 
 	<title>{block title|striptags|upper}Nette Application Skeleton{/block}</title>
 
-	{control css 'screen.css', 'print.css'}
+	{control css 'bootstrap.min.css', 'bootstrap-responsive.css', 'screen.css', 'print.css', 'sandbox.css'}
 	{block css}{/block}
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
 	{block head}{/block}
 </head>
 
 <body>
-	<script> document.body.className+=' js' </script>
-
 	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 
 	{include #content}
 
-	{control js 'jquery.js', 'netteForms.js', 'main.js'}
+	{control js 'jquery.js', 'modernizr.js', 'nette.js', 'nette.ajax.js', 'main.js', 'live-form-validation.js' }
 	{block js}{/block}
 </body>
 </html>
