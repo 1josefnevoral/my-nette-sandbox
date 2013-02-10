@@ -5,7 +5,11 @@
 # http://nette.org/security-warning
 #
 parameters:
-
+	images:
+		maxWidth: 800
+		maxHeight: 600
+		basePath: "img/uploads/"
+		tempDir: ""
 php:
 	date.timezone: Europe/Prague
 	# zlib.output_compression: yes
@@ -32,5 +36,11 @@ services:
 
 
 factories:
+	cache:
+		class: Nette\Caching\Cache(@cacheStorage)
+	emailMessage:
+		class: \Nette\Mail\Message
+		setup:
+			- setMailer( Local\SendmailMailer(%productionMode%) )
 
 

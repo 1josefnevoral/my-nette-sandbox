@@ -1,0 +1,5 @@
+nette:
+	database:
+		dsn: 'mysql:host=localhost;dbname='
+		user: 
+		password:
