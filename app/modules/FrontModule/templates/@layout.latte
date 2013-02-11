@@ -7,7 +7,13 @@
 
 	<title>{block title|striptags|upper}Nette Application Skeleton{/block}</title>
 
-	{control css 'bootstrap.min.css', 'bootstrap-responsive.css', 'screen.css', 'print.css', 'sandbox.css'}
+	{control css 'bootstrap.min.css',
+		'bootstrap-responsive.css',
+		'screen.css',
+		'print.css',
+		'font-awesome.min.css', 
+		'font-awesome-ie7.min.css',
+		'sandbox.css'}
 	{block css}{/block}
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
 	{block head}{/block}
@@ -18,7 +24,12 @@
 
 	{include #content}
 
-	{control js 'jquery.js', 'modernizr.js', 'nette.js', 'nette.ajax.js', 'main.js', 'live-form-validation.js' }
+	{control js 'jquery.js',
+		'modernizr.js',
+		'nette.js',
+		'nette.ajax.js',
+		'main.js',
+		'live-form-validation.js' }
 	{block js}{/block}
 </body>
 </html>
