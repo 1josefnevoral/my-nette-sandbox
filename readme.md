@@ -1,8 +1,28 @@
-Nette Framework Sandbox
+Customized Nette Framework Sandbox
 =======================
 
 The basic skeleton of application.
 
+Customizations
+--------------
+
+### Third party components (installed by Composer if possible)
+
+#### Backend components
++ [Webloader](https://github.com/janmarek/WebLoader)
++ [BootstrapFormRenderer](https://github.com/Kdyby/BootstrapFormRenderer)
+
+#### Frontend components
++ [Twitter bootstrap](https://github.com/twitter/bootstrap)
++ [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
++ [Nette Ajax](https://github.com/vojtech-dobes/nette.ajax.js)
+
+
+### Other components
+
++ [SendmailMailer](https://github.com/lovec/my-nette-sandbox/blob/master/libs/Local/SendmailMailer.php) For sending emails in development only on demand
++ [ModelLoader](http://pla.nette.org/cs/nacitani-modelu-s-notorm-a-dependency-injection) For loading models. Needs review to DI
++ [Changelog module](https://github.com/lovec/my-nette-sandbox/tree/master/app/modules/ChangelogModule) For handling changes in db structure see readme for installation instructions
 
 What is [Nette Framework](http://nette.org)?
 ------------------------
